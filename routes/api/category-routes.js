@@ -14,6 +14,7 @@ router.get("/", async (req, res) => {
           required: true,
         },
       ],
+      order: [["id", "ASC"]],
     });
     res.status(200).json({
       message: `${req.method} data retrieved!`,
