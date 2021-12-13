@@ -11,7 +11,6 @@ router.get("/", async (req, res) => {
       include: [
         {
           model: Product,
-          required: true,
         },
       ],
       order: [["id", "ASC"]],
