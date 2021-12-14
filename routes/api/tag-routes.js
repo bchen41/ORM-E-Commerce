@@ -15,7 +15,7 @@ router.get("/", async (req, res) => {
       ],
     });
     res.status(200).json({
-      message: `${req.method}: data retrieved!`,
+      message: `${req.method}: tag data retrieved!`,
       data: tagData,
     });
   } catch (err) {
@@ -34,7 +34,7 @@ router.get("/:id", async (req, res) => {
       res.status(404).json({ message: "No category found with this id!" });
     }
     res.status(200).json({
-      message: `${req.method}: data retrieved!`,
+      message: `${req.method}: tag data retrieved!`,
       data: tagData,
     });
   } catch (err) {
@@ -47,7 +47,7 @@ router.post("/", async (req, res) => {
   try {
     const tagData = await Tag.create(req.body);
     res.status(200).json({
-      message: `${req.method}: tag added!`,
+      message: `${req.method}: new tag added!`,
       data: tagData,
     });
   } catch (err) {

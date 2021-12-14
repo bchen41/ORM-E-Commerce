@@ -16,7 +16,7 @@ router.get("/", async (req, res) => {
       order: [["id", "ASC"]],
     });
     res.status(200).json({
-      message: `${req.method} data retrieved!`,
+      message: `${req.method}: category data retrieved!`,
       data: categoryData,
     });
   } catch (err) {
@@ -33,10 +33,9 @@ router.get("/:id", async (req, res) => {
     });
     if (!categoryData) {
       res.status(404).json({ message: "No category found with this id!" });
-      return;
     }
     res.status(200).json({
-      message: `${req.method} data retrieved!`,
+      message: `${req.method}: category data retrieved!`,
       data: categoryData,
     });
   } catch (err) {
@@ -49,11 +48,11 @@ router.post("/", async (req, res) => {
   try {
     const categoryData = await Category.create(req.body);
     res.status(200).json({
-      message: `${req.method} category added!`,
+      message: `${req.method}: new category added!`,
       data: categoryData,
     });
   } catch (err) {
-    res.status(400).json(err);
+    res.status(500).json(err);
   }
 });
 
@@ -71,7 +70,7 @@ router.put("/:id", async (req, res) => {
       }
     );
     res.status(200).json({
-      message: `${req.method} category updated!`,
+      message: `${req.method}: category updated!`,
       data: categoryData,
     });
   } catch (err) {
@@ -90,10 +89,9 @@ router.delete("/:id", async (req, res) => {
 
     if (!categoryData) {
       res.status(404).json({ message: "No category found with this id!" });
-      return;
     }
     res.status(200).json({
-      message: `${req.method} category deleted!`,
+      message: `${req.method}: category deleted!`,
       data: categoryData,
     });
   } catch (err) {
