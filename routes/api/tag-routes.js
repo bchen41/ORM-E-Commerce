@@ -25,7 +25,7 @@ router.get("/:id", async (req, res) => {
       include: [{ model: Product }],
     });
     if (!tagData) {
-      res.status(404).json({ message: "No category found with this id!" });
+      res.status(404).json({ message: "No tag found with this id!" });
     }
     res.status(200).json({
       message: `${req.method}: tag data retrieved!`,
@@ -78,7 +78,7 @@ router.delete("/:id", async (req, res) => {
     });
 
     if (!tagData) {
-      res.status(404).json({ message: "No category found with this id!" });
+      res.status(404).json({ message: "No tag found with this id!" });
     }
     res.status(200).json({
       message: `${req.method}: tag deleted!`,
