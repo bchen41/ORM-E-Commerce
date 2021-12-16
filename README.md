@@ -16,19 +16,11 @@ This project uses the latest technologies, Express and Sequelize, to interact wi
 
 ## Installations
 
-npm init -y
-
-npm install express
-
-npm install dotenv
-
-npm install sequelize
-
-npm install mysql2
+npm install
 
 ## Screenshot
 
-<img src="e-commerce.png" alt="Screenshot of Insomnia with GET method of all categories"/>
+<img src="./images/e-commerce.png" alt="Screenshot of Insomnia with GET method of all categories"/>
 
 ## Video
 
